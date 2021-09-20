@@ -606,4 +606,9 @@ finishing() {
     fi
 }
 
+isSilicon() {
+    #DEBUGarch provides a way to override arch for testing downloads
+    local arch=${DEBUGarch:-$(arch)}
+    [[ $arch =~ ^arm.* ]]
+}
 
